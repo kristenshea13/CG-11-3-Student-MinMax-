@@ -7,21 +7,19 @@ namespace CG_11_3__Student_MinMax_
 {
     public class Student
     {
-            //properties for student class, string name and an int List 
-            //for the student scores
+            //properties for student class, string name and an int List of scores
 
             public string Name { get; set; }
 
             public List<int> Scores { get; set; }
             
-
-            /// <summary>
             /// constructor to split student name and scores(int) from text file
-            /// </summary>
-            /// <param name="studentData"></param>
             public Student(string studentData)
             {
+                //splits data at ;
                 string[] studentdataSplit = studentData.Split("; ");
+                
+                //initiate int list for scores
                 Scores = new List<int>();
 
                 for (int i = 0; i < studentdataSplit.Length; i++)

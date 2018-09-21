@@ -12,10 +12,10 @@ namespace CG_11_3__Student_MinMax_
             //read text file
             string[] students = File.ReadAllLines(@"C:\Users\kstar\source\repos\CG 11-3 (Student MinMax)\CG 11-3 (Student MinMax)\studentdata.txt");
 
-            //create a list of students created and all corresponding data
+            //create a list of students and all corresponding data
             List<Student> studentData = new List<Student>();
 
-            //foreach loop to use data from text file to create new instances of the student class and add to List
+            //loop to use data from text file to create new instances of the student class and add to List
             foreach (string item in students)
             {
                 studentData.Add(new Student(item));
