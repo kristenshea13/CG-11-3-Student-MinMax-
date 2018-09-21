@@ -8,22 +8,20 @@ namespace CG_11_3__Student_MinMax_
     {
         static void Main(string[] args)
         {
-            //Using the text file studentdata.txt write a program that calculates the 
-            //minimum and maximum score for each student. Print out their name as well.Be sure to use a Student class.
 
+            //read text file
+            string[] students = File.ReadAllLines(@"C:\Users\kstar\source\repos\CG 11-3 (Student MinMax)\CG 11-3 (Student MinMax)\studentdata.txt");
 
-
-            string[] students = File.ReadAllLines(@"C:\Users\kstar\source\repos\CG 11-2 (Student Grades)
-                                                    \CG 11-2 (Student Grades)\studentdata.txt");
-
+            //create a list of students created and all corresponding data
             List<Student> studentData = new List<Student>();
 
+            //foreach loop to use data from text file to create new instances of the student class and add to List
             foreach (string item in students)
             {
                 studentData.Add(new Student(item));
-
             }
 
+            //loop to write out the minimum and maximum scores for each student from methods in student class
             foreach (Student student in studentData)
             {
                 Console.WriteLine($"{student.StudentNameCap()}: \n " +

@@ -7,11 +7,18 @@ namespace CG_11_3__Student_MinMax_
 {
     public class Student
     {
-      
+            //properties for student class, string name and an int List 
+            //for the student scores
+
             public string Name { get; set; }
 
             public List<int> Scores { get; set; }
+            
 
+            /// <summary>
+            /// constructor to split student name and scores(int) from text file
+            /// </summary>
+            /// <param name="studentData"></param>
             public Student(string studentData)
             {
                 string[] studentdataSplit = studentData.Split("; ");
@@ -33,11 +40,19 @@ namespace CG_11_3__Student_MinMax_
 
             }
 
+        /// <summary>
+        /// capitalize the first letter only of name
+        /// </summary>
+        /// <returns>name with first letter capitalized</returns>
         public string StudentNameCap()
         {
             return char.ToUpper(this.Name[0]) + this.Name.Substring(1);
         }
 
+        /// <summary>
+        /// determine lowest exam score from list of scores for each student
+        /// </summary>
+        /// <returns>lowest score for each student</returns>
         public int MinScore()
         {
             int minScore = Scores.First();
@@ -51,6 +66,10 @@ namespace CG_11_3__Student_MinMax_
             return minScore;
         }
 
+        /// <summary>
+        /// determine highest exam score for each student
+        /// </summary>
+        /// <returns>highest exam score for each student</returns>
         public int MaxScore()
         {
             int maxScore = 0;
@@ -61,10 +80,6 @@ namespace CG_11_3__Student_MinMax_
             }
             return maxScore;
         }
-
-
-        
-
 
     }
 }
